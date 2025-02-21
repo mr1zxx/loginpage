@@ -67,7 +67,7 @@ export default function LoginPage() {
       >
         <img
     src="/NOVAI.png" 
-    alt="Logo da Empresa"
+    alt="Novai Logo"
     style={{ width: "100%", height: "auto", marginBottom: "1rem" }}
   />
   <button
