@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import { AiFillLock } from "react-icons/ai";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState<string>(""); // Estado do e-mail
-  const [password, setPassword] = useState<string>(""); // Estado da senha
-  const [loading, setLoading] = useState<boolean>(false); // Estado de carregamento
-  const [errorMessage, setErrorMessage] = useState<string | null>(null); // Estado para mensagens de erro
-  const router = useRouter(); // Hook para redirecionamento
+  const [email, setEmail] = useState<string>(""); 
+  const [password, setPassword] = useState<string>(""); 
+  const [loading, setLoading] = useState<boolean>(false); 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const router = useRouter(); 
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,10 +28,9 @@ export default function LoginPage() {
       const data = await response.json();
   
       if (response.ok) {
-        // Se o login for bem-sucedido, redireciona para /dashboard
+        
         router.push("");
       } else {
-        // Se ocorrer erro, exibe a mensagem de erro retornada pela API
         setErrorMessage(data.message || "Erro no login");
       }
     } catch (error) {
@@ -63,17 +62,17 @@ export default function LoginPage() {
           borderTopLeftRadius : "20px",
           height: "495px",
           backgroundColor: "#000",
-          color: "#111111", // Fonte mais escura para contraste
+          color: "#111111", 
         }}
       >
         <img
-    src="/NOVAI.png" // Caminho da imagem na pasta "public"
+    src="/NOVAI.png" 
     alt="Logo da Empresa"
     style={{ width: "100%", height: "auto", marginBottom: "1rem" }}
   />
   <button
   type="button"
-  onClick={() => router.push("/cadastro")} // Redireciona para a página de cadastro
+  onClick={() => router.push("/cadastro")} 
   style={{
     width: "100%", 
     padding: ".75rem",
@@ -82,7 +81,7 @@ export default function LoginPage() {
     border: "solid 1px #ffff",
     borderRadius: "15px",
     cursor: "pointer",
-    marginTop: "164px", // 🔥 Garante espaço entre os botões
+    marginTop: "164px",
     display: "block", 
   }}
 >
@@ -100,7 +99,7 @@ export default function LoginPage() {
           boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
           width: "450px",
           backgroundColor: "#ffff",
-          color: "#111111", // Fonte mais escura para contraste
+          color: "#111111", 
         }}
       >
         <h2 style={{ textAlign: "center", color: "#111111" }}>Login</h2>
@@ -122,7 +121,7 @@ export default function LoginPage() {
             style={{
               display: "block",
               marginBottom: ".5rem",
-              color: "#111111", // Fonte mais escura
+              color: "#111111", 
             }}
           >
             Email
@@ -139,8 +138,8 @@ export default function LoginPage() {
               padding: ".5rem",
               borderRadius: "20px",
               border: "1px solid #ccc",
-              color: "#000", // Texto dentro do input
-              backgroundColor: "#e", // Fundo do input
+              color: "#000", 
+              backgroundColor: "#e", 
             }}
           />
         </div>
@@ -150,7 +149,7 @@ export default function LoginPage() {
             style={{
               display: "block",
               marginBottom: ".5rem",
-              color: "#111111", // Fonte mais escura
+              color: "#111111", 
             }}
           >
             Senha
@@ -167,14 +166,14 @@ export default function LoginPage() {
               padding: ".5rem",
               borderRadius: "20px",
               border: "1px solid #ccc",
-              color: "#111111", // Texto dentro do input
-              backgroundColor: "#efefe", // Fundo do input
+              color: "#111111",
+              backgroundColor: "#efefe", 
             }}
           />
         </div>
         <button
           type="submit"
-          disabled={loading} // Desativa o botão enquanto está carregando
+          disabled={loading} 
           style={{
             marginTop: "5px",
             width: "100%",
